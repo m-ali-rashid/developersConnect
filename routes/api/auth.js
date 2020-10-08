@@ -1,0 +1,86 @@
+const express = require("express");
+const router = express.Router();
+const auth = require("../../middleware/auth");
+
+const User = require("../../models/User");
+
+const { check, validationResult } = require("express-validator");
+const jwt = require("jsonwebtoken");
+const config = require("config");
+const bcrypt = require("bcryptjs");
+
+// @route   GET api/auth
+// @desc    Test route
+// @access  Public (we wont need JSON WEB TOKEN for Public Route)
+
+router.get("/", auth, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select("-password");
+    res.json(user);
+  } catch {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
+// @route   POST api/auth
+// @desc    Authenticate user and Get Token
+// @access  Public (we wont need JSON WEB TOKEN for Public Route)
+router.post(
+  "/",
+  [
+    check("email", "Please include Valid Email").isEmail(),
+    check("password", "Password is required").exists(),
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { email, password } = req.body;
+
+    try {
+      // See if user exists
+      let user = await User.findOne({ email });
+      if (!user) {
+        return res
+          .status(400)
+          .json({ errors: [{ msg: "user Invalid Credentials" }] });
+      }
+      //Match email and Password
+      //bcrypt method compares entered password and hashed password
+
+      const isMatch = await bcrypt.compare(password, user.password);
+
+      if (!isMatch) {
+        return res
+          .status(400)
+          .json({ errors: [{ msg: "pw Invalid Credentials" }] });
+      }
+
+      // Return JsonWebToken
+      const payload = {
+        user: {
+          id: user.id,
+        },
+      };
+      jwt.sign(
+        payload,
+        config.get("jwtSecret"),
+        { expiresIn: 360000 },
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
+      // res.send("USER REGISTERED");
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server Error");
+    }
+  }
+);
+
+module.exports = router;
