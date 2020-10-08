@@ -10,14 +10,13 @@
     "server": "nodemon server",
     "client": "npm start --prefix client",
     "dev": "concurrently \"yarn server\" \"yarn client\"",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "proxy": "http://localhost:5000/",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "config": "^3.3.1",
     "cors": "^2.8.5",
-    "corss": "^2.8.5",
     "express": "^4.17.1",
     "express-validator": "^6.6.1",
     "gravatar": "^1.8.1",
