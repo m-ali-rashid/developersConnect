@@ -11,9 +11,9 @@
   "scripts": {
     "start": "node server",
     "server": "nodemon server",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"yarn server\" \"yarn client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "frontEnd": "npm start --prefix frontEnd",
+    "dev": "concurrently \"yarn server\" \"yarn frontEnd\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontEnd && npm run build --prefix frontEnd"
   },
   "proxy": "http://localhost:5000/",
   "dependencies": {
