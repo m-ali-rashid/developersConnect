@@ -5,6 +5,9 @@
   "main": "server.js",
   "author": "Ali Rashid",
   "license": "MIT",
+  "engines": {
+    "node": ">=0.12"
+  },
   "scripts": {
     "start": "node server",
     "server": "nodemon server",
