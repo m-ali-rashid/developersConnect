@@ -17,7 +17,7 @@
     "dev": "concurrently \"yarn server\" \"yarn client\"",
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "herokuu-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run addmodule && cd client && npm run build"
+    "heroku-postbuild": "npm run addmodule && cd client && npm run build"
   },
   "proxy": "http://localhost:5000/",
   "dependencies": {
@@ -30,10 +30,10 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.27",
     "request": "^2.88.2",
-    "uuid": "^8.3.0"
-  },
-  "devDependencies": {
+    "uuid": "^8.3.0",
     "concurrently": "^5.2.0",
     "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
   }
 }
