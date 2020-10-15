@@ -29,11 +29,11 @@ const AddEducation = ({ addEducation, history }) => {
   return (
     <Fragment>
       <h1 className="large text-primary">Add Your Education</h1>
-      <p className="lead">
+      <p className="lead text-white">
         <i className="fas fa-code-branch"></i> Add any School or Bootcamp that
         you've attended
       </p>
-      <small>* = required field</small>
+      <small className="text-white">* = required field</small>
       <form
         className="form"
         onSubmit={(e) => {
@@ -71,7 +71,7 @@ const AddEducation = ({ addEducation, history }) => {
           />
         </div>
         <div className="form-group">
-          <h4>From Date</h4>
+          <h4 className="text-white">From Date</h4>
           <input
             type="date"
             name="from"
@@ -80,7 +80,7 @@ const AddEducation = ({ addEducation, history }) => {
           />
         </div>
         <div className="form-group">
-          <p>
+          <p className="text-white"> 
             <input
               type="checkbox"
               name="current"
@@ -95,7 +95,7 @@ const AddEducation = ({ addEducation, history }) => {
           </p>
         </div>
         <div className="form-group">
-          <h4>To Date</h4>
+          <h4 className="text-white">To Date</h4>
           <input
             type="date"
             name="to"

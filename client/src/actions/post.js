@@ -139,7 +139,7 @@ export const getPost = (id) => async (dispatch) => {
   }
 };
 
-// Add Post
+// Add Comment
 export const addComment = (postId, formData) => async (dispatch) => {
   const config = {
     headers: {

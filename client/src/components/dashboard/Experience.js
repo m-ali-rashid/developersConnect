@@ -6,9 +6,9 @@ import { deleteExperience } from "../../actions/profile";
 
 const Experience = ({ experience, deleteExperience }) => {
   const experiences =
-    // experience &&
+    experience &&
     experience.map((exp) => (
-      <tr key={exp._id}>
+      <tr className="text-white" key={exp._id}>
         {console.log(exp)}
         <td>{exp.company}</td>
         <td className="hide-sm">{exp.title}</td>
@@ -34,7 +34,7 @@ const Experience = ({ experience, deleteExperience }) => {
     ));
   return (
     <Fragment>
-      <h2 className="my-2">Experience Credentials</h2>
+      <h2 className="my-2 text-white">Experience Credentials</h2>
 
       <table className="table">
         <thead>

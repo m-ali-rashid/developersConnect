@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
 import { Fragment } from "react";
+import Logo from '../../img/logo.png'
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
@@ -21,10 +22,10 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         </NavLink>
       </li>
       <li>
-        <a onClick={logout} href="#!">
+        <NavLink onClick={logout} to="/">
           <i className="fas fa-sign-out-alt"></i>{" "}
           <span className="hide-sm">Logout</span>
-        </a>
+        </NavLink>
       </li>
     </ul>
   );
@@ -34,18 +35,22 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         <NavLink to="/profiles">Developers</NavLink>
       </li>
       <li>
+        <NavLink to="/posts">Posts</NavLink>
+      </li>
+      <li>
         <NavLink to="/register">Register</NavLink>
       </li>
       <li>
-        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/">Login</NavLink>
       </li>
     </ul>
   );
   return (
-    <nav className="navbar bg-dark">
+    <nav className="navbar bg-dark-light">
       <h1>
-        <NavLink to="/">
-          <i className="fas fa-code"></i> DevConnector
+        <NavLink style={{display:'flex'}} to="/">
+        <img src={Logo} alt="d" style={{maxWidth:'50px'}}/>
+        <p style={{marginLeft:'0.5rem'}}><span className="text-primary"> Developers'</span> Connect</p>
         </NavLink>
       </h1>
 

@@ -1,12 +1,21 @@
 import React, { useState } from "react";
+import {Redirect} from 'react-router-dom'
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addPost } from "../../actions/post";
 
 const PostForm = ({ addPost }) => {
   const [text, setText] = useState("");
+  const [isredirect,setredirect] = useState(false)
+
+  if (isredirect) {
+    return <Redirect to="/posts" />;
+  }
+
   return (
     <div className="post-form">
+      
+      <div className="my-2 py-1"></div>
       <div className="bg-primary p">
         <h3>Say Something...</h3>
       </div>
@@ -16,6 +25,7 @@ const PostForm = ({ addPost }) => {
           e.preventDefault();
           addPost({ text });
           setText("");
+          setredirect(true)
         }}
       >
         <textarea

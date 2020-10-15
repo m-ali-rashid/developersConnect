@@ -25,6 +25,7 @@ const Profile = ({
         <Spinner />
       ) : (
         <Fragment>
+        <div className="my-2 py-1"></div>
           <NavLink to="/profiles" className="btn btn-light">
             Back To Profiles
           </NavLink>

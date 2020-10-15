@@ -27,7 +27,8 @@ const PostItem = ({
           Posted on <Moment format="DD/MM/YYYY">{date}</Moment>
         </p>
 
-        {showActions && (
+
+        {auth.isAuthenticated && showActions && (
           <Fragment>
             <button
               onClick={(e) => addLike(_id)}

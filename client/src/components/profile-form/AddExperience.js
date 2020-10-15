@@ -21,11 +21,11 @@ const AddExperience = ({ addExperience, history }) => {
   return (
     <Fragment>
       <h1 className="large text-primary">Add An Experience</h1>
-      <p className="lead">
+      <p className="lead text-white">
         <i className="fas fa-code-branch"></i> Add any developer/programming
         positions that you have had in the past
       </p>
-      <small>* = required field</small>
+      <small className="text-white">* = required field</small>
       <form
         className="form"
         onSubmit={(e) => {
@@ -63,7 +63,7 @@ const AddExperience = ({ addExperience, history }) => {
           />
         </div>
         <div className="form-group">
-          <h4>From Date</h4>
+          <h4 className="text-white">From Date</h4>
           <input
             type="date"
             name="from"
@@ -72,7 +72,7 @@ const AddExperience = ({ addExperience, history }) => {
           />
         </div>
         <div className="form-group">
-          <p>
+          <p className="text-white">
             <input
               type="checkbox"
               name="current"
@@ -87,7 +87,7 @@ const AddExperience = ({ addExperience, history }) => {
           </p>
         </div>
         <div className="form-group">
-          <h4>To Date</h4>
+          <h4 className="text-white">To Date</h4>
           <input
             type="date"
             name="to"

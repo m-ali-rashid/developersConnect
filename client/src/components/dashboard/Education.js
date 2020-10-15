@@ -5,8 +5,8 @@ import { connect } from "react-redux";
 import { deleteEducation } from "../../actions/profile";
 
 const Education = ({ education, deleteEducation }) => {
-  const educations = education.map((edu) => (
-    <tr key={edu._id}>
+  const educations = education && education.map((edu) => (
+    <tr className="text-white" key={edu._id}>
       <td>{edu.school}</td>
       <td className="hide-sm">{edu.degree}</td>
       <td>
@@ -32,7 +32,7 @@ const Education = ({ education, deleteEducation }) => {
   ));
   return (
     <Fragment>
-      <h2 className="my-2">Education Credentials</h2>
+      <h2 className="my-2 text-white">Education Credentials</h2>
 
       <table className="table">
         <thead>

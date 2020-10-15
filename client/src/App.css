@@ -1,7 +1,9 @@
 /* Global Styles */
 :root {
-  --primary-color: #17a2b8;
+  --primary-color: #ffbf5e;
+  /* --primary-color: #4a5152; */
   --dark-color: #343a40;
+  --dark-light-color: rgba(52, 58, 64, 0.3);
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
@@ -40,8 +42,8 @@ img {
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-  margin-top: 6rem;
-  margin-bottom: 3rem;
+  /* margin-top: 6rem;
+  margin-bottom: 3rem; */
 }
 
 /* Text Styles*/
@@ -72,6 +74,10 @@ img {
 
 .text-dark {
   color: var(--dark-color);
+}
+
+.text-white {
+  color: #fff;
 }
 
 /* Padding */
@@ -177,6 +183,11 @@ img {
 .badge-dark,
 .alert-dark {
   background: var(--dark-color);
+  color: #fff;
+}
+
+.bg-dark-light {
+  background: var(--dark-light-color);
   color: #fff;
 }
 
@@ -308,8 +319,8 @@ button {
   z-index: 1;
   width: 100%;
   top: 0;
-  border-bottom: solid 1px var(--primary-color);
-  opacity: 0.9;
+  /* border-bottom: solid 1px var(--primary-color); */
+  /* opacity: 0.3; */
 }
 
 .navbar ul {
@@ -333,7 +344,8 @@ button {
 /* Landing Page */
 .landing {
   position: relative;
-  background: url("./img/showcase.jpg") no-repeat center center/cover;
+  background: url("https://source.unsplash.com/1600x900/?coding,developer")
+    no-repeat center center/cover;
   height: 100vh;
 }
 
@@ -343,9 +355,9 @@ button {
   width: 80%;
   margin: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
 }
 

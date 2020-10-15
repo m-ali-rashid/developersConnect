@@ -35,8 +35,10 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <Fragment>
+    <div className="my-2 py-1"></div>
+      <div className="my-2 py-1"></div>
       <h1 className="large text-primary">Sign Up</h1>
-      <p className="lead">
+      <p className=" lead text-white">
         <i className="fas fa-user"></i> Create Your Account
       </p>
       <form className="form" onSubmit={(e) => onSubmit(e)}>
@@ -88,8 +90,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />
       </form>
-      <p className="my-1">
-        Already have an account? <NavLink to="/login">Sigh In</NavLink>
+      <p className="my-1 text-white">
+        Already have an account? <NavLink to="/">Sigh In</NavLink>
       </p>
     </Fragment>
   );

@@ -23,10 +23,11 @@ const Dashboard = ({
     <Spinner />
   ) : (
     <Fragment>
+    <div className="my-1 py-1"></div>
       <h1 className="large text-primary">Dashboard</h1>
-      <p className="lead">
-        <i className="fas fa-user"></i>
-        Welcome {user && user.name}
+      <p className="lead text-white">
+        <i className="fas fa-user"></i>{' '}
+        Welcome<span className="text-primary"> {user && user.name}</span>
       </p>
       {profile === null || profile.msg === "Bad Request" ? (
         <Fragment>
