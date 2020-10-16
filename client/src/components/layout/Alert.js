@@ -5,7 +5,9 @@ import { connect } from "react-redux";
 const Alert = ({ alerts }) =>{
   return (
     <Fragment>
-    <div className="my-2 py-1"></div>
+    {alerts != null && alerts.length > 0 && (
+      <div className="my-2 py-1"></div>
+    )}
       {
           alerts != null &&
           alerts.length > 0 &&

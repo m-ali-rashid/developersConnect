@@ -11,7 +11,6 @@ const Landing = ({ isAuthenticated }) => {
   }
   return (
     <section className="landing">
-    <div className="my-2 py-1"></div>
       <div className="dark-overlay">
         <div className="landing-inner">
           <div style={{textAlign: "left"}}>
