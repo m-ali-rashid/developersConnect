@@ -2,8 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import Login from '../auth/Login'
-
+import Login from "../auth/Login";
 
 const Landing = ({ isAuthenticated }) => {
   if (isAuthenticated) {
@@ -13,14 +12,15 @@ const Landing = ({ isAuthenticated }) => {
     <section className="landing">
       <div className="dark-overlay">
         <div className="landing-inner">
-          <div style={{textAlign: "left"}}>
-            <h1 className="x-large">Developers' <br/> <span style={{color:"#ffbf5e"}}>Connect</span> </h1>
-            <p className="lead">
-              An online Platform to meet new Developers
-            </p>
+          <div className="landing-inner-left">
+            <h1 className="x-large">
+              Developers' <br />{" "}
+              <span style={{ color: "#ffbf5e" }}>Connect</span>{" "}
+            </h1>
+            <p className="lead">An online Platform to meet new Developers</p>
           </div>
           <div className="loginForm">
-            <Login/>
+            <Login />
           </div>
         </div>
       </div>

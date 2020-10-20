@@ -361,6 +361,10 @@ button {
   text-align: center;
 }
 
+.landing-inner-left {
+  text-align: left;
+}
+
 /* Profiles Page */
 .profile {
   display: grid;
@@ -502,6 +506,18 @@ button {
 
 /* Mobile Styles */
 @media (max-width: 700px) {
+  /* .landing-inner {
+    margin-top: 4rem;
+    flex-direction: column;
+    justify-content: center;
+  } */
+  .landing-inner-left {
+    display: none;
+  }
+  .loginForm {
+    margin: 0 auto 0 auto;
+  }
+
   .container {
     margin-top: 8rem;
   }
